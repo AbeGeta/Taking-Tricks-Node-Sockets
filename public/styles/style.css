@@ -1,0 +1,179 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+#wrapperChat, #wrapperGame {
+    width: 80%;
+    margin: 40px auto 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ccc;
+}
+
+/* Chat styles */
+#userForm {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#username {
+    padding: 10px;
+    font-size: 1.2em;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 5px #ccc;
+}
+
+#sendUsername {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#currentName {
+    margin-left: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#chat {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    overflow-y: scroll;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+#chat p {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+#chat p.username {
+    font-weight: bold;
+}
+
+#msgForm {
+    display: flex;
+    align-items: center;
+}
+
+#msg {
+    padding: 10px;
+    font-size: 1.2em;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 5px #ccc;
+    flex-grow: 1;
+}
+
+#sendMsg {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Game styles */
+#playGame {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#leave, #startGame {
+    background-color: #f44336;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+}
+
+#startGame {
+    display: none;
+}
+
+#game {
+    display: none;
+    margin-top: 20px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+#hand {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ccc;
+    padding: 10px;
+}
+
+.card {
+    width: 150px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #ccc;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+}
+
+
+#hand .card.selected {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+#trumpDiv, #leadCard {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #ccc;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+}
+
+#turn, #winner {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#counter, #waiting {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
