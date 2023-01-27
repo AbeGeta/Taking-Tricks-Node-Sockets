@@ -102,8 +102,7 @@ addEventListener('load', () => {
 
     socket.on('startGame', card => {
         $$('#game').style.display = 'block';
-        $$('#trumpDiv').innerHTML += `<p>Trump:</p>`
-        $$('#trumpDiv').innerHTML += `<div class='card' id='trump'>${card.type}</div>`
+        $$('#trumpDiv').innerHTML = `<p>Trump:</p> <div class='card' id='trump'>${card.type}</div>`
         $$(`#trump`).style.border = `1px solid red`;
 
         for (let i=0;i<9;i++) {
@@ -115,8 +114,7 @@ addEventListener('load', () => {
     });
 
     socket.on('displayLeadCard', (leadCard) => {
-        $$('#leadDiv').innerHTML += `<p>Lead: </p>`;
-        $$('#leadDiv').innerHTML = `<div class='card'>${leadCard.type}</div>`;
+        $$('#leadDiv').innerHTML = `<p>Lead: </p> <div class='card'>${leadCard.type}</div>`;
     });
 
     socket.on('turn', () => {
@@ -124,7 +122,7 @@ addEventListener('load', () => {
     });
 
     socket.on('turnOver', () => {
-        $$('#turn').innerHTML = "";
+        $$('#turn').innerHTML = "Opponent's turn.";
     });
 
     socket.on('winTrick', (name) => {
@@ -154,6 +152,7 @@ addEventListener('load', () => {
     });
 
     socket.on('gameOver', () => {
+        $$('#turn').innerHTML = "";
         $$('#playGame').style.display = "block";
         $$('#game').style.display = 'none';
         $$('#leave').style.display = "block";

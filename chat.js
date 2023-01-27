@@ -168,6 +168,8 @@ io.on('connection', (socket) => {
 
                 firstPlayerIndex = Math.floor((Math.random() * queueArray.length));
                 currentPlayerIndex = firstPlayerIndex;
+
+                io.sockets.to(queueArray[1 - firstPlayerIndex].id).emit('turnOver');
                 io.sockets.to(queueArray[firstPlayerIndex].id).emit('turn');
             })
             .catch(err => {
@@ -189,7 +191,7 @@ io.on('connection', (socket) => {
         }
     
         cardArray[socket.id] = card;
-    
+
         currentPlayerIndex = (currentPlayerIndex + 1) % queueArray.length;
     
         if (currentPlayerIndex === firstPlayerIndex) {
@@ -219,9 +221,16 @@ io.on('connection', (socket) => {
           io.sockets.to(winner.id).emit('turn');
 
           if (numberOfTricks === 9) {
-            io.sockets.emit('turnOver');
             queueArray.sort((a, b) => b.tricks - a.tricks);
-            logFile(`${user.name}, ${queueArray[0].name}\n`);
+
+            if (queueArray[0].tricks === queueArray[1].tricks) {
+                logFile(`${user.name}, ${queueArray[0].name}, ${queueArray[1].name}\n`);
+                io.emit('draw', queueArray[0].name, queueArray[1].name);
+            }
+            else {
+                logFile(`${user.name}, ${queueArray[0].name}\n`);
+                io.emit('winGame', queueArray[0].name);
+            }
 
             io.emit('gameOver');
             queueArray = [];
