@@ -1,6 +1,6 @@
-# Taking-Tricks
+# Taking Tricks
 
-This is an assignment from Web Programming III on Node.js and web sockets. It is a game of Taking Tricks and a chat room. The learning objectives are to create a working server in Node using web sockets, complete a chat function between multiple people and complete a game for multiple players.
+This is an assignment from Web Programming III on Node.js and web sockets. It is a game of Taking Tricks and a chat room. You can open multiple tabs to simulate multiple users and use the chat room as well as play the game together. The learning objectives are to create a working server in Node using web sockets, complete a chat function between multiple people and complete a game for multiple players.
 
 Rules of the game:
 
